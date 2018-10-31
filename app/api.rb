@@ -10,5 +10,10 @@ module ExpenseTracker
     get '/expenses/:date' do
       JSON.generate([])
     end
+
+    get '/random' do
+      things = ['face', 'nose', 'buttocks']
+      JSON.generate(things.sample)
+    end
   end
 end
