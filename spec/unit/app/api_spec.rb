@@ -60,7 +60,13 @@ module ExpenseTracker
 
     describe 'GET /expenses/:date' do
       context 'when expenses exist on a given date' do
-        it 'returns the expense records as JSON'
+
+        it 'returns the expense records as JSON' do
+          get '/expenses/:date'
+
+          allow(ledger).to receive(:date)
+            .and_return([])
+        end
         it 'responds with a 200 (OK)'
 
       end
